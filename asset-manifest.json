@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/inventory-manager-small-shop/static/css/main.2dcee4fd.css",
+    "main.js": "/inventory-manager-small-shop/static/js/main.93c250d0.js",
+    "index.html": "/inventory-manager-small-shop/index.html",
+    "main.2dcee4fd.css.map": "/inventory-manager-small-shop/static/css/main.2dcee4fd.css.map",
+    "main.93c250d0.js.map": "/inventory-manager-small-shop/static/js/main.93c250d0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2dcee4fd.css",
+    "static/js/main.93c250d0.js"
+  ]
+}
