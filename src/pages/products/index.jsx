@@ -9,10 +9,9 @@ import {
 } from "@mui/material";
 // import { useGetCustomersQuery } from "state/api";
 import Header from "components/Header";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
-import DataGridCustomToolbar from "components/DataGridCustomToolbar";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { Productscolumns } from "../../datagridsource";
 import AddProduct from "pages/newitem/AddProduct";
@@ -162,7 +161,7 @@ function Products() {
           getRowId={(row) => row.id}
           rows={data || []}
           columns={Productscolumns.concat(actionColumn)}
-          components={{ Toolbar: DataGridCustomToolbar }}
+          components={{ Toolbar: GridToolbar }}
           rowHeight={115}
         />
       </Box>

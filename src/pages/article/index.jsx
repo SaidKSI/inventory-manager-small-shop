@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 // import { useGetCustomersQuery } from "state/api";
 import Header from "components/Header";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import {
   collection,
   deleteDoc,
@@ -17,7 +17,6 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "../../firebase";
-import DataGridCustomToolbar from "components/DataGridCustomToolbar";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { Salescolumns } from "../../datagridsource";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -159,7 +158,7 @@ function ArticleSales() {
           getRowId={(row) => row.id}
           rows={data || []}
           columns={Salescolumns.concat(actionColumn)}
-          components={{ Toolbar: DataGridCustomToolbar }}
+          components={{ Toolbar: GridToolbar }}
           rowHeight={115}
         />
       </Box>

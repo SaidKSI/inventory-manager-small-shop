@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 // import { useGetCustomersQuery } from "state/api";
 import Header from "components/Header";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import {
   collection,
   deleteDoc,
@@ -12,7 +12,6 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "../../firebase";
-import DataGridCustomToolbar from "components/DataGridCustomToolbar";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { Expenses_Services_columns } from "../../datagridsource";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -153,7 +152,7 @@ function Maintenance() {
           getRowId={(row) => row.id}
           rows={data || []}
           columns={Expenses_Services_columns.concat(actionColumn)}
-          components={{ Toolbar: DataGridCustomToolbar }}
+          components={{ Toolbar: GridToolbar }}
         />
       </Box>
       <Snackbare

@@ -32,7 +32,7 @@ export default function AddSale({ open, setOpen, category }) {
   const [status, setStatus] = useState("");
   const [alertOpen, setAlertOpen] = useState(false);
   const [message, setMessage] = useState("Operation completed successfully");
-console.log(sale)
+  console.log(sale);
   const handleClose = () => {
     setOpen(false);
     setSale("");
@@ -107,14 +107,13 @@ console.log(sale)
     setTotalPrice(sale.sell_price * sale.qantity);
   }, [sale.sell_price, sale.qantity]);
 
-  console.log(sale);
   const [checked, setChecked] = useState(false);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
-  console.log(sale);
   // console.log(products);
+  console.log(products);
 
   return (
     <div>
@@ -131,7 +130,7 @@ console.log(sale)
               id="highlights-demo"
               sx={{ width: 215, m: "0.5rem" }}
               options={products}
-              getOptionLabel={(option) => option.name}
+              getOptionLabel={(option) => (option.name ? option.name : "")}
               renderInput={(params) => (
                 <TextField {...params} label="Highlights" margin="normal" />
               )}
@@ -142,11 +141,11 @@ console.log(sale)
                   product_name: value.name,
                   product_buy_price: value.buy_price,
                   product_in_stock: value.in_stock,
-                  product_category : value.category,
+                  product_category: value.category,
                 })
               }
               renderOption={(props, option, { inputValue }) => {
-                const matches = match(option.name, inputValue, {
+                const matches = match(option.name ? option.name : "", inputValue, {
                   insideWords: true,
                 });
                 const parts = parse(option.name, matches);
@@ -169,6 +168,7 @@ console.log(sale)
                 );
               }}
             />
+
             <IconButton
               sx={{
                 color: theme.palette.secondary[200],

@@ -24,7 +24,7 @@ export default function AddProduct({ open, setOpen }) {
   const [status, setStatus] = useState("");
   const [alertOpen, setAlertOpen] = useState(false);
   const [message, setMessage] = useState("Operation completed successfully");
-  console.log(products);
+  // console.log(products);
   const handleClose = () => {
     setOpen(false);
   };
@@ -59,9 +59,7 @@ export default function AddProduct({ open, setOpen }) {
 
   useEffect(() => {
     const uploadFile = () => {
-      const name = new Date().getTime() + file.name;
 
-      console.log(name);
       const storageRef = ref(storage, file.name);
       const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -97,9 +95,7 @@ export default function AddProduct({ open, setOpen }) {
   }, [file, setPerc]);
 
   
-  // console.log(brands);
-  // console.log(categories);
-  // console.log(products);
+
   return (
     <div>
       <Dialog open={open} onClose={handleClose} maxWidth="md">

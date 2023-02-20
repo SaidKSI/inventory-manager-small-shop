@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Box, IconButton, MenuItem, TextField, useTheme } from "@mui/material";
 // import { useGetCustomersQuery } from "state/api";
 import Header from "components/Header";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import {
   collection,
   deleteDoc,
@@ -13,7 +13,6 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "../../firebase";
-import DataGridCustomToolbar from "components/DataGridCustomToolbar";
 import { Histotycolumns } from "../../datagridsource";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -131,8 +130,8 @@ function Sales() {
         endAt = new Date();
         endAt.setFullYear(endAt.getFullYear() + 1);
       }
-      console.log(startAt)
-      console.log(endAt)
+      // console.log(startAt)
+      // console.log(endAt)
       const salesTotal = query(
         collection(db, "sales"),
         where("type", "==", "sale"),
@@ -180,7 +179,7 @@ function Sales() {
         parseFloat(servicesTotal)
     );
   }, [salesTotal, shipmentTotal, servicesTotal]);
-  console.log(servicesTotal);
+  // console.log(servicesTotal);
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="History" subtitle="Liste de l'historique des ventes" />
@@ -273,7 +272,7 @@ function Sales() {
           getRowId={(row) => row.id}
           rows={data || []}
           columns={Histotycolumns.concat(actionColumn)}
-          components={{ Toolbar: DataGridCustomToolbar }}
+          components={{ Toolbar: GridToolbar  }}
           rowHeight={115}
         />
       </Box>

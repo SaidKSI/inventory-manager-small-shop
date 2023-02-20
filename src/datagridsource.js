@@ -160,7 +160,7 @@ export const Salescolumns = [
   },
   {
     field: "sell_totalprice",
-    headerName: "Prix ​​Total",
+    headerName: "Prix ​Total",
     flex: 0.5,
   },
   {

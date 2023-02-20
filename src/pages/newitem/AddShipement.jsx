@@ -43,7 +43,7 @@ export default function AddShipement({ open, setOpen }) {
   const handleClose = () => {
     setOpen(false);
   };
-  console.log(shipement);
+  // console.log(shipement);
   const handleAdd = async (e) => {
     e.preventDefault();
     try {
@@ -149,7 +149,7 @@ export default function AddShipement({ open, setOpen }) {
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productList, totalPrice]);
-  console.log(shipement);
+  // console.log(shipement);
   return (
     <div>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
